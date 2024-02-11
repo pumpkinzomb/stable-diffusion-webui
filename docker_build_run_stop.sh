@@ -22,8 +22,8 @@ run_container() {
         IMAGE_NAME=$selected_image
     fi
 
-    # Run the Docker container
-    docker run -p $PORT_NUMBER:5000 --name $CONTAINER_NAME $IMAGE_NAME
+   # Run the Docker container with GPU support
+    docker run -u appuser -p $PORT_NUMBER:$PORT_NUMBER --name $CONTAINER_NAME $IMAGE_NAME
 }
 
 # Function to stop the Docker container
